@@ -1,0 +1,69 @@
+\documentclass[modern]{aastex61}
+
+% to-do list
+% ----------
+
+% style notes
+% -----------
+% - This file generates by Makefile; don't be typing ``pdflatex'' or some
+%   bullshit.
+% - Line break between sentences to make the git diffs readable.
+% - Use \, as a multiply operator.
+% - Reserve () for function arguments; use [] or {} for outer shit.
+% - Use \sectionname not Section, \figname not Figure, \documentname not Article
+%   or Paper or paper.
+
+\include{gitstuff}
+
+% packages
+\definecolor{cbblue}{HTML}{3182bd}
+\usepackage{microtype}  % ALWAYS!
+\usepackage{amsmath,amssymb,natbib}
+\usepackage[flushleft]{threeparttable}
+\hypersetup{backref,breaklinks,colorlinks,urlcolor=cbblue,linkcolor=cbblue,citecolor=black}
+\graphicspath{{figures/}}
+
+\begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing % trust me
+
+\title{A pair of co-moving, Sun-like stars with different chemical abundances:\\
+       a possible signature of copious rocky accretion (needs work)}
+
+\author{
+  Adrian M. Price-Whelan\altaffilmark{\pu,\lead},
+}
+
+% Affiliations
+\newcommand{\pu}{1}
+\newcommand{\lead}{2}
+
+\altaffiltext{\pu}{Department of Astrophysical Sciences,
+                   Princeton University, Princeton, NJ 08544, USA}
+\altaffiltext{\lead}{To whom correspondence should be addressed:
+                     \texttt{adrn@astro.princeton.edu}}
+% \altaffiltext{\ccpp}{Center for Cosmology and Particle Physics,
+%                      Department of Physics,
+%                      New York University, 4 Washington Place,
+%                      New York, NY 10003, USA}
+% \altaffiltext{\mpia}{Max-Planck-Institut f\"ur Astronomie,
+%                      K\"onigstuhl 17, D-69117 Heidelberg, Germany}
+% \altaffiltext{\cca}{Center for Computational Astrophysics, 162 5th Ave, New York, NY 10003, USA}
+
+
+\begin{abstract}
+  Stuff.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\section{Methods}
+\label{sec:methods}
+
+\section{Data}
+\label{sec:data}
+
+\bibliography{ref}
+
+
+
+\end{document}
