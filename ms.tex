@@ -1,57 +1,60 @@
 \documentclass[modern]{aastex61}
 
-% to-do list
-% ----------
+% TODO
+% ----
 
-% style notes
-% -----------
-% - This file generates by Makefile; don't be typing ``pdflatex'' or some
-%   bullshit.
+% Style guidelines
+% ----------------
+% - Use the Makefile; don't be typing ``pdflatex'' or some bullshit.
+% - Wrap text to 80 character lines.
 % - Line break between sentences to make the git diffs readable.
 % - Use \, as a multiply operator.
 % - Reserve () for function arguments; use [] or {} for outer shit.
 % - Use \sectionname not Section, \figname not Figure, \documentname not Article
-%   or Paper or paper.
 
 \include{gitstuff}
+\include{preamble}
 
-% packages
-\definecolor{cbblue}{HTML}{3182bd}
-\usepackage{microtype}  % ALWAYS!
-\usepackage{amsmath,amssymb,natbib}
-\usepackage[flushleft]{threeparttable}
-\hypersetup{backref,breaklinks,colorlinks,urlcolor=cbblue,linkcolor=cbblue,citecolor=black}
-\graphicspath{{figures/}}
+% Extra packages
+\usepackage{microtype}
+\usepackage{multirow}
+
+% Change the citation color or link color here:
+% \definecolor{linkcolor}{rgb}{0.02,0.35,0.55}
+% \definecolor{citecolor}{rgb}{0.4,0.4,0.4}
 
 \begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing % trust me
 
-\title{A pair of co-moving, Sun-like stars with different chemical abundances:\\
-       a possible signature of copious rocky accretion (needs work)}
+\title{Science stuff}
 
-\author{
-  Adrian M. Price-Whelan\altaffilmark{\pu,\lead},
-}
+\author[0000-0003-0872-7098]{Adrian~M.~Price-Whelan}
+\affiliation{Department of Astrophysical Sciences,
+             Princeton University, Princeton, NJ 08544, USA}
 
-% Affiliations
-\newcommand{\pu}{1}
-\newcommand{\lead}{2}
+% \author[0000-0002-5151-0006]{David~N.~Spergel}
+% \affiliation{Flatiron Institute,
+%              Simons Foundation,
+%              162 Fifth Avenue,
+%              New York, NY 10010, USA}
+% \affiliation{Department of Astrophysical Sciences,
+%              Princeton University, Princeton, NJ 08544, USA}
 
-\altaffiltext{\pu}{Department of Astrophysical Sciences,
-                   Princeton University, Princeton, NJ 08544, USA}
-\altaffiltext{\lead}{To whom correspondence should be addressed:
-                     \texttt{adrn@astro.princeton.edu}}
-% \altaffiltext{\ccpp}{Center for Cosmology and Particle Physics,
-%                      Department of Physics,
-%                      New York University, 4 Washington Place,
-%                      New York, NY 10003, USA}
-% \altaffiltext{\mpia}{Max-Planck-Institut f\"ur Astronomie,
-%                      K\"onigstuhl 17, D-69117 Heidelberg, Germany}
-% \altaffiltext{\cca}{Center for Computational Astrophysics, 162 5th Ave, New York, NY 10003, USA}
-
+\correspondingauthor{Adrian M. Price-Whelan}
+\email{adrn@astro.princeton.edu}
 
 \begin{abstract}
-  Stuff.
+% Context
+% Aims
+% Methods
+% Results
+% Conclusions
 \end{abstract}
+
+\keywords{
+    binaries: spectroscopic
+    ---
+    whatever
+}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -62,8 +65,39 @@
 \section{Data}
 \label{sec:data}
 
-\bibliography{ref}
+\acknowledgements
 
+It is a pleasure to thank
 
+\software{
+The code used in this project is available from
+\url{https://github.com/adrn/GaiaPairsFollowup} under the MIT open-source
+software license.
+This research utilized the following open-source \python\ packages:
+    \package{Astropy} (\citealt{Astropy-Collaboration:2013}),
+    \package{astroquery} (\citealt{Ginsburg:2016}),
+    \package{ccdproc} (\citealt{Craig:2015}),
+    \package{celerite} (\citealt{Foreman-Mackey:2017}),
+    \package{corner} (\citealt{Foreman-Mackey:2016}),
+    \package{emcee} (\citealt{Foreman-Mackey:2013ascl}),
+    \package{IPython} (\citealt{Perez:2007}),
+    \package{matplotlib} (\citealt{Hunter:2007}),
+    \package{numpy} (\citealt{Van-der-Walt:2011}),
+    \package{scipy} (\url{https://www.scipy.org/}),
+    \package{sqlalchemy} (\url{https://www.sqlalchemy.org/}).
+This work additionally used the Gaia science archive
+(\url{https://gea.esac.esa.int/archive/}), and the SIMBAD database
+(\citealt{Wenger:2000}).
+}
+
+% \facility{MDM: Hiltner (Modspec)}
+
+\appendix
+
+\section{Some extra stuff} % \label{appdx:}
+
+\clearpage
+\bibliographystyle{aasjournal}
+\bibliography{refs}
 
 \end{document}
